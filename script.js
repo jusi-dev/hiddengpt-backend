@@ -9,6 +9,8 @@ app.use(cors({
     origin: '*'
 }));
 
+console.log(process.env.API_KEY);
+
 import { config } from "dotenv";
 config();
 
