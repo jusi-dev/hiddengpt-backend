@@ -16,7 +16,7 @@ config();
 
 import { Configuration, OpenAIApi } from "openai";
 
-const oneTimeAccessCodes = ['PIUtHt', 't09sHW', 'ux7ziD', 'xoohZY', 'kgrXow', 'LPFaNR', 'TpWtVN', 'JgIuzp', 'yIFQto', 'cR2EkO']
+const oneTimeAccessCodes = ['84aqjB', 'hGnN1W', 'Mm26D3', 'JJrk45', 'mI1C27', 'F2mOgo', 'xyDSGc', 'QyqNny', 'Xbf6ex', 'rcQvtM']
 
 // DEFINE API KEY
 const openai = new OpenAIApi(new Configuration({
@@ -31,6 +31,11 @@ async function generateAnswer(msgHistory) {
     });
     return res;
 }
+
+app.post('/api/addKey', (req, res) => {
+    oneTimeAccessCodes.push(req.body.KEY);
+    return res.status(200).send('Successful added key!');
+});
 
 app.post('/api/checkOTAC', (req, res) => {
     console.log(req.body);
