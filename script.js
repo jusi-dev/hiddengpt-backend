@@ -33,8 +33,9 @@ async function generateAnswer(msgHistory) {
 }
 
 app.post('/api/addKey', (req, res) => {
+    console.log('got request', req.body.KEY)
     oneTimeAccessCodes.push(req.body.KEY);
-    return res.status(200).send('Successful added key!');
+    res.status(200).send('Successful added key!');
 });
 
 app.post('/api/checkOTAC', (req, res) => {
